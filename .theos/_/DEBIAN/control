@@ -1,0 +1,10 @@
+Package: com.matdev.moderncc
+Name: ModernCC
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: ModernCC, working?
+Maintainer: Mathieu Rancourt
+Author: Mathieu Rancourt
+Section: Tweaks
+Version: 0.0.1-22+debug
+Installed-Size: 152
