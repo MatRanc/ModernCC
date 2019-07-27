@@ -43,8 +43,9 @@ float customRadius = 3;
 	} 
 
 -(double) _continuousCornerRadius {
+
 	return customRadius;
 	%orig;
 	} 
-
+	
 %end

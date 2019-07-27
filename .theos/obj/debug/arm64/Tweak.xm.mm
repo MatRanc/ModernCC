@@ -34,6 +34,9 @@
 
 
 
+#import <SpringBoard/SpringBoard-Structs.h>
+#import <SpringBoard/SBIgnoredForAutorotationSecureWindow.h>
+
 float customRadius = 3;
 
 
@@ -60,20 +63,24 @@ float customRadius = 3;
 @class MTMaterialView; 
 static void (*_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$)(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL, double); static void _logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL, double); static double (*_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius)(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL); static double _logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL); 
 
-#line 38 "Tweak.xm"
+#line 41 "Tweak.xm"
 
 
 static void _logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, double arg1) {
+	if ([self.window isKindOfClass:[SBControlCenterWindow class]]){
 	arg1 = customRadius;
 	_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$(self, _cmd, arg1);
 	} 
+}
 
 static double _logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
+		if ([self.view isKindOfClass:[SBControlCenterWindow class]]){
+
 	return customRadius;
 	_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius(self, _cmd);
 	} 
-
+}
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$MTMaterialView = objc_getClass("MTMaterialView"); MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_setContinuousCornerRadius:), (IMP)&_logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$);MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_continuousCornerRadius), (IMP)&_logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius);} }
-#line 51 "Tweak.xm"
+#line 58 "Tweak.xm"
