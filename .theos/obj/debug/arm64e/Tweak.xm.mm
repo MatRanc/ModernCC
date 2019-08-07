@@ -58,7 +58,7 @@ CGFloat customCCUIRoundButton = customRadius;
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class CCUIRoundButton; @class MTMaterialView; 
+@class MTMaterialView; @class CCUIRoundButton; 
 static void (*_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$)(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL, double); static void _logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL, double); static double (*_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius)(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL); static double _logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$CCUIRoundButton$_setCornerRadius$)(_LOGOS_SELF_TYPE_NORMAL CCUIRoundButton* _LOGOS_SELF_CONST, SEL, double); static void _logos_method$_ungrouped$CCUIRoundButton$_setCornerRadius$(_LOGOS_SELF_TYPE_NORMAL CCUIRoundButton* _LOGOS_SELF_CONST, SEL, double); 
 
 #line 39 "Tweak.xm"
