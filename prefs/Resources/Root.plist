@@ -27,17 +27,18 @@
 			<real>40.0</real>
 			<key>showValue</key>
 			<true/>
+			<key>PostNotification</key>
+			<string>com.matdev.moderncc/ReloadPrefs</string>
 		</dict>
 
-
-		<dict>
+	  	<dict>
 			<key>cell</key>
 			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Respring</string>
 			<key>action</key>
 			<string>respring</string>
-		</dict>
+			<key>label</key>
+			<string>Restart SpringBoard</string>
+	  	</dict>
 
 	</array>
 	<key>title</key>

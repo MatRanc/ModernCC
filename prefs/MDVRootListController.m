@@ -4,7 +4,8 @@
 
 - (NSArray *)specifiers {
 	if (!_specifiers) {
-		_specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
+											//Use your actual package pref plist and not root.plist
+		_specifiers = [self loadSpecifiersFromPlistName:@"com.matdev.moderncc" target:self];
 	}
 
 	return _specifiers;
