@@ -34,7 +34,7 @@ inline float GetPrefFloat(NSString *key) {
 
 
 //values
-float customRadius = 6;
+float customRadius = GetPrefFloat(@"largeCCModuleRadius");
 float customCCUIRoundButton = customRadius;
 
 %hook MTMaterialView
