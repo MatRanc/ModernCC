@@ -28,8 +28,17 @@
 			<key>showValue</key>
 			<true/>
 			<key>PostNotification</key>
-			<string>com.matdev.moderncc/ReloadPrefs</string>
+			<string>com.matdev.prefs/settingschanged</string>
 		</dict>
+
+		<dict>
+            <key>cell</key>             
+			<string>PSButtonCell</string>
+            <key>label</key>           
+			<string>Save</string>
+            <key>action</key>           
+			<string>save</string>
+        </dict>
 
 	</array>
 	<key>title</key>
