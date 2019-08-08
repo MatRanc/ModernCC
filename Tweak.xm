@@ -34,9 +34,13 @@ the generation of a class list and an automatic constructor.
 */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //values
 CGFloat customRadius = 6.5;
 CGFloat customCCUIRoundButton = customRadius;
+=======
+float customRadius = 3;
+>>>>>>> parent of ad57992... tweaking container modules
 =======
 float customRadius = 3;
 >>>>>>> parent of ad57992... tweaking container modules

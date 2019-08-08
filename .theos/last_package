@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ./packages/com.matdev.moderncc_0.0.1-37+debug_iphoneos-arm.deb
+=======
+./packages/com.matdev.moderncc_0.0.1-25+debug_iphoneos-arm.deb
+>>>>>>> parent of ad57992... tweaking container modules
 =======
 ./packages/com.matdev.moderncc_0.0.1-25+debug_iphoneos-arm.deb
 >>>>>>> parent of ad57992... tweaking container modules

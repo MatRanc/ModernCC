@@ -35,16 +35,22 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 CGFloat customRadius = 6.5;
 CGFloat customCCUIRoundButton = customRadius;
 =======
+=======
+>>>>>>> parent of ad57992... tweaking container modules
 #import <SpringBoard/SpringBoard-Structs.h>
 #import <SpringBoard/SBIgnoredForAutorotationSecureWindow.h>
 
 float customRadius = 3;
+<<<<<<< HEAD
 >>>>>>> parent of ad57992... tweaking container modules
 
+=======
+>>>>>>> parent of ad57992... tweaking container modules
 
 
 #include <substrate.h>
@@ -90,8 +96,13 @@ static double _logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius(_L
 
 static __attribute__((constructor)) void _logosLocalInit() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 {Class _logos_class$_ungrouped$MTMaterialView = objc_getClass("MTMaterialView"); MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_setContinuousCornerRadius:), (IMP)&_logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$);MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_continuousCornerRadius), (IMP)&_logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius);Class _logos_class$_ungrouped$CCUIRoundButton = objc_getClass("CCUIRoundButton"); MSHookMessageEx(_logos_class$_ungrouped$CCUIRoundButton, @selector(_setCornerRadius:), (IMP)&_logos_method$_ungrouped$CCUIRoundButton$_setCornerRadius$, (IMP*)&_logos_orig$_ungrouped$CCUIRoundButton$_setCornerRadius$);} }
 #line 65 "Tweak.xm"
+=======
+{Class _logos_class$_ungrouped$MTMaterialView = objc_getClass("MTMaterialView"); MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_setContinuousCornerRadius:), (IMP)&_logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$);MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_continuousCornerRadius), (IMP)&_logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius);} }
+#line 58 "Tweak.xm"
+>>>>>>> parent of ad57992... tweaking container modules
 =======
 {Class _logos_class$_ungrouped$MTMaterialView = objc_getClass("MTMaterialView"); MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_setContinuousCornerRadius:), (IMP)&_logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$);MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_continuousCornerRadius), (IMP)&_logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius);} }
 #line 58 "Tweak.xm"
