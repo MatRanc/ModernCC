@@ -21,24 +21,15 @@
 			<string>com.matdev.moderncc</string>
 			<key>key</key>
 			<string>largeCCModuleRadius</string>
-			<key>min</key>
-			<real>0.0</real>
 			<key>max</key>
-			<real>30.0</real>
+			<real>30</real>
+			<key>min</key>
+			<real>0</real>
 			<key>showValue</key>
 			<true/>
 			<key>PostNotification</key>
 			<string>com.matdev.moderncc/ReloadPrefs</string>
 		</dict>
-
-	  	<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>action</key>
-			<string>respring</string>
-			<key>label</key>
-			<string>Restart SpringBoard</string>
-	  	</dict>
 
 	</array>
 	<key>title</key>

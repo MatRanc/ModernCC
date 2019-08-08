@@ -1,6 +1,5 @@
 #define PLIST_PATH @"/var/mobile/Library/Preferences/com.matdev.moderncc.plist"
 
-
 //set keys for the prefrence bundle
 inline float GetPrefFloat(NSString *key) {
 	return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] floatValue];
@@ -35,7 +34,6 @@ float customCCUIRoundButton = customRadius;
 }
 
 %end
-
 
 
 
