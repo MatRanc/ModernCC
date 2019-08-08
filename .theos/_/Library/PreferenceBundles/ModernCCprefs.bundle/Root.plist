@@ -17,6 +17,7 @@
 			<string></string>
 			<key>icon</key>
 			<string>banner.png</string>
+			<key>cell</key>
 		</dict>
 	</array>
 	<key>title</key>

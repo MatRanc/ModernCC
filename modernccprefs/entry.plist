@@ -11,7 +11,7 @@
 		<key>detail</key>
 		<string>MATRootListController</string>
 		<key>icon</key>
-		<string>icon.png</string>
+		<string>placeholder_image.jpg</string>
 		<key>isController</key>
 		<true/>
 		<key>label</key>

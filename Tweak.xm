@@ -33,6 +33,7 @@ the generation of a class list and an automatic constructor.
 %end
 */
 
+//values
 CGFloat customRadius = 6.5;
 CGFloat customCCUIRoundButton = customRadius;
 
