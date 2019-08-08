@@ -33,9 +33,17 @@ the generation of a class list and an automatic constructor.
 %end
 */
 
+#define PLIST_PATH @"/var/mobile/Library/Preferences/Root.plist"
+
+//set keys for the prefrence bundle
+inline float GetPrefFloat(NSString *key) {
+	return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] floatValue];
+}
+
+
 //values
-CGFloat customRadius = 6.5;
-CGFloat customCCUIRoundButton = customRadius;
+float customRadius = GetPrefFloat(@"customRadius"); //key customRadius
+float customCCUIRoundButton = customRadius;
 
 %hook MTMaterialView
 
@@ -62,3 +70,16 @@ CGFloat customCCUIRoundButton = customRadius;
 }
 
 %end
+
+
+
+
+
+
+
+/* Notes
+
+This is a good place to learn more about prefrencebundle keys, not really learn but look how they are implemented
+(https://github.com/Auxilium-Development/excitant/blob/master/Excitant.xm) Thanks Auxilium bois ;)
+
+*/

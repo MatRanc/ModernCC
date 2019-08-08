@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>ModernCCprefs</string>
+	<string>prefs</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.matdev.modernccprefs</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -19,6 +19,6 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
-	<string>MATRootListController</string>
+	<string>MDVRootListController</string>
 </dict>
 </plist>

@@ -6,5 +6,5 @@ Description: ModernCC, working?
 Maintainer: Mathieu Rancourt
 Author: Mathieu Rancourt
 Section: Tweaks
-Version: 0.0.1-<<<<<<< HEAD <<<<<<< HEAD 37 ======= 25 >>>>>>> parent of ad57992... tweaking container modules ======= 25 >>>>>>> parent of ad57992... tweaking container modules+debug
-Installed-Size: 1228
+Version: 0.0.2-11+debug
+Installed-Size: 312

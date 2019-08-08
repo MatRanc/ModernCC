@@ -34,10 +34,17 @@
 
 
 
+#define PLIST_PATH @"/var/mobile/Library/Preferences/Root.plist"
 
-CGFloat customRadius = 6.5;
-CGFloat customCCUIRoundButton = customRadius;
 
+inline float GetPrefFloat(NSString *key) {
+	return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] floatValue];
+}
+
+
+
+float customRadius = GetPrefFloat(@"customRadius"); 
+float customCCUIRoundButton = customRadius;
 
 
 #include <substrate.h>
@@ -60,10 +67,10 @@ CGFloat customCCUIRoundButton = customRadius;
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class CCUIRoundButton; @class MTMaterialView; 
+@class MTMaterialView; @class CCUIRoundButton; 
 static void (*_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$)(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL, double); static void _logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL, double); static double (*_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius)(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL); static double _logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$CCUIRoundButton$_setCornerRadius$)(_LOGOS_SELF_TYPE_NORMAL CCUIRoundButton* _LOGOS_SELF_CONST, SEL, double); static void _logos_method$_ungrouped$CCUIRoundButton$_setCornerRadius$(_LOGOS_SELF_TYPE_NORMAL CCUIRoundButton* _LOGOS_SELF_CONST, SEL, double); 
 
-#line 41 "Tweak.xm"
+#line 48 "Tweak.xm"
 
 
 static void _logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, double arg1) {
@@ -72,6 +79,7 @@ static void _logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$(
 	} 
 
 static double _logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius(_LOGOS_SELF_TYPE_NORMAL MTMaterialView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
+
 	return customRadius;
 	_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius(self, _cmd);
 	} 
@@ -88,6 +96,19 @@ static void _logos_method$_ungrouped$CCUIRoundButton$_setCornerRadius$(_LOGOS_SE
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$MTMaterialView = objc_getClass("MTMaterialView"); MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_setContinuousCornerRadius:), (IMP)&_logos_method$_ungrouped$MTMaterialView$_setContinuousCornerRadius$, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_setContinuousCornerRadius$);MSHookMessageEx(_logos_class$_ungrouped$MTMaterialView, @selector(_continuousCornerRadius), (IMP)&_logos_method$_ungrouped$MTMaterialView$_continuousCornerRadius, (IMP*)&_logos_orig$_ungrouped$MTMaterialView$_continuousCornerRadius);Class _logos_class$_ungrouped$CCUIRoundButton = objc_getClass("CCUIRoundButton"); MSHookMessageEx(_logos_class$_ungrouped$CCUIRoundButton, @selector(_setCornerRadius:), (IMP)&_logos_method$_ungrouped$CCUIRoundButton$_setCornerRadius$, (IMP*)&_logos_orig$_ungrouped$CCUIRoundButton$_setCornerRadius$);} }
-#line 65 "Tweak.xm"
+#line 86 "Tweak.xm"
