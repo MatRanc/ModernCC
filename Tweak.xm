@@ -26,7 +26,6 @@ float customCCUIRoundButton = customRadius;
 	
 %end
 
-
 //Hooks for the smaller buttons in the CC | ie. airplane mode, wifi, etc.
 %hook CCUIRoundButton
 
