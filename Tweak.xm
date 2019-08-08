@@ -33,17 +33,9 @@ the generation of a class list and an automatic constructor.
 %end
 */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 //values
 CGFloat customRadius = 6.5;
 CGFloat customCCUIRoundButton = customRadius;
-=======
-float customRadius = 3;
->>>>>>> parent of ad57992... tweaking container modules
-=======
-float customRadius = 3;
->>>>>>> parent of ad57992... tweaking container modules
 
 %hook MTMaterialView
 
@@ -58,4 +50,15 @@ float customRadius = 3;
 	%orig;
 	} 
 	
+%end
+
+
+//Hooks for the smaller buttons in the CC | ie. airplane mode, wifi, etc.
+%hook CCUIRoundButton
+
+-(void)_setCornerRadius:(double)arg1 {
+	arg1 = customCCUIRoundButton;
+	%orig;
+}
+
 %end
