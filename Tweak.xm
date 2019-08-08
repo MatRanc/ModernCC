@@ -1,4 +1,3 @@
-
 #define PLIST_PATH @"/var/mobile/Library/Preferences/com.matdev.moderncc.plist"
 
 
