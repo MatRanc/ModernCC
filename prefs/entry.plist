@@ -15,7 +15,7 @@
 		<key>isController</key>
 		<true/>
 		<key>label</key>
-		<string>ModernCC</string>
+		<string>prefs</string>
 	</dict>
 </dict>
 </plist>
