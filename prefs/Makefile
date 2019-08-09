@@ -2,12 +2,11 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = prefs
 
-prefs_FILES = MDVRootListController.m
+prefs_FILES = FSDRootListController.m
 prefs_INSTALL_PATH = /Library/PreferenceBundles
 prefs_FRAMEWORKS = UIKit
 prefs_PRIVATE_FRAMEWORKS = Preferences
 prefs_CFLAGS = -fobjc-arc
-prefs_EXTRA_FRAMEWORKS = Cephei CepheiPrefs 
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 

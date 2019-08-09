@@ -34,7 +34,7 @@
 		<dict>
             <key>cell</key>             
 			<string>PSButtonCell</string>
-            <key>label</key> 	          
+            <key>label</key>           
 			<string>Save</string>
             <key>action</key>           
 			<string>save</string>

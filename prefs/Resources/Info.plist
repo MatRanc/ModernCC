@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>prefs</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.matdev.modernccprefs</string>
+	<string>com.matdev.prefs</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -19,6 +19,6 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
-	<string>MDVRootListController</string>
+	<string>FSDRootListController</string>
 </dict>
 </plist>

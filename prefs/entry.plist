@@ -9,13 +9,13 @@
 		<key>cell</key>
 		<string>PSLinkCell</string>
 		<key>detail</key>
-		<string>MDVRootListController</string>
+		<string>FSDRootListController</string>
 		<key>icon</key>
 		<string>icon.png</string>
 		<key>isController</key>
 		<true/>
 		<key>label</key>
-		<string>prefs</string>
+		<string>ModernCC</string>
 	</dict>
 </dict>
 </plist>
