@@ -43,9 +43,6 @@ float customCCUIRoundButton = customRadius;
 
 
 
-
-
-
 /* Notes
 This is a good place to learn more about prefrencebundle keys, not really learn but look how they are implemented
 (https://github.com/Auxilium-Development/excitant/blob/master/Excitant.xm) Thanks Auxilium bois ;)
