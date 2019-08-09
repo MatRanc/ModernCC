@@ -10,12 +10,18 @@ inline float GetPrefFloat(NSString *key) {
 float customRadius = GetPrefFloat(@"largeCCModuleRadius");
 float customCCUIRoundButton = customRadius;
 
+
 %hook MTMaterialView
 
 -(void) _setContinuousCornerRadius:(double)arg1 {
 	arg1 = customRadius;
+
+	if(customRadius <= 0){
+		customRadius = 0;
+	}
+
 	%orig;
-	} 
+} 
 
 -(double) _continuousCornerRadius {
 
