@@ -5,6 +5,8 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = ModernCC
 ModernCC_FILES = Tweak.xm
 ModernCC_CFLAGS = -fobjc-arc
+$(TWEAK_NAME)_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
+
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

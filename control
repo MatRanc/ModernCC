@@ -1,6 +1,6 @@
 Package: com.matdev.moderncc
 Name: ModernCC
-Depends: mobilesubstrate
+Depends: mobilesubstrate, ws.hbang.common (>= 1.13)
 Version: 0.0.2
 Architecture: iphoneos-arm
 Description: ModernCC, working?

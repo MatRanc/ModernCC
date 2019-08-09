@@ -11,9 +11,4 @@
 	return _specifiers;
 }
 
--(void)save
-{
-    [self.view endEditing:YES];
-}
-
 @end
