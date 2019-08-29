@@ -1,29 +1,4 @@
 
-@interface MTMaterialView : UIView {
-
-	UIView* _reducedTransparencyBackdropReplacementView;
-	UIView* _baseOverlayView;
-	UIView* _primaryOverlayView;
-	UIView* _secondaryOverlayView;
-	BOOL _cornerRadiusIsContinuous;
-	BOOL _isConfiguredAsOverlay;
-	BOOL _highlighted;
-	BOOL _shouldCrossfadeIfNecessary;
-	BOOL _forceCrossfadeIfNecessary;
-	BOOL _useBuiltInAlphaTransformerAndBackdropScaleAdjustment;
-	NSString* _groupName;
-	/*^block*/id _backdropScaleAdjustment;
-
-}
-
-@property (readonly) Class superclass; 
--(double)cornerRadius;
--(double)_continuousCornerRadius;
--(void)_setCornerRadius:(double)arg1 ;
--(void)_setContinuousCornerRadius:(double)arg1 ;
-@end
-
-
 
 @interface CCUIRoundButton : UIControl {
 
