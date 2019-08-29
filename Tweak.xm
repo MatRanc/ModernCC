@@ -58,3 +58,12 @@ float customCCUIRoundButton = customRadius;
 %end
 
 //----------------------------------------------
+
+%hook 
+
+-(void)_setContinuousCornerRadius:(double)arg1 {
+    arg1 = customRadius;
+    %orig;
+}
+
+%end

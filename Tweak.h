@@ -1,4 +1,8 @@
+@interface MTMaterialView : UIView
+@end 
 
+@interface CCUIButtonModuleView : UIControl
+@end
 
 @interface CCUIRoundButton : UIControl {
 

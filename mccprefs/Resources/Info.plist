@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>prefs</string>
+	<string>mccprefs</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.matdev.prefs</string>
+	<string>com.matdev.mccprefs</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
