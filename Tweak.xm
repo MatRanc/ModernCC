@@ -12,7 +12,6 @@ float customRadius = GetPrefFloat(@"largeCCModuleRadius");
 float customCCUIRoundButton = customRadius;
 
 
-
 //Hooks the main set of cc modules
 
 %hook CCUIContentModuleContentContainerView
@@ -59,11 +58,22 @@ float customCCUIRoundButton = customRadius;
 
 //----------------------------------------------
 
-%hook 
+
+/*
+%hook MTMaterialView
 
 -(void)_setContinuousCornerRadius:(double)arg1 {
-    arg1 = customRadius;
-    %orig;
+	if ([self.window isKindOfClass:%c(SBControlCenterWindow)])
+	arg1 = customRadius;
 }
 
 %end
+*/
+
+/*
+-(void) _setContinuousCornerRadius:(double)arg1 {
+    if ([self.window isKindOfClass:%c(SBControlCenterWindow)])
+        arg1 = customRadius;
+    %orig;
+} 
+*/
