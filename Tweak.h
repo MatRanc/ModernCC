@@ -4,6 +4,9 @@
 @interface CCUIButtonModuleView : UIControl
 @end
 
+@interface CCUIModuleCollectionViewController : UIViewController
+@end
+
 @interface CCUIRoundButton : UIControl {
 
 	BOOL _useAlternateBackground;

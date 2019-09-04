@@ -59,11 +59,12 @@ float customCCUIRoundButton = customRadius;
 //----------------------------------------------
 
 
-%hook MTMaterialView
+%hook CCUIModuleCollectionViewController
 
--(void)setContinuousCornerRadius:(double)arg1 {
-	if ([self isKindOfClass:%c(SBControlCenterWindow)])
-	arg1 = 12;    
+-(void)viewDidLoad {
+    %orig;
+    self.setContinuousCornerRadius = customRadius;
+
 }
 
 %end
