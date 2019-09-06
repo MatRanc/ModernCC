@@ -8,11 +8,12 @@ inline float GetPrefFloat(NSString *key) {
 }
 
 //Values
-float customRadius = GetPrefFloat(@"largeCCModuleRadius");
+//float customRadius = GetPrefFloat(@"largeCCModuleRadius");
+float customRadius = 0;
 float customCCUIRoundButton = customRadius;
 
 
-//Hooks the main set of cc modules
+//Hooks the main/default set of cc modules
 
 %hook CCUIContentModuleContentContainerView
 
@@ -22,6 +23,7 @@ float customCCUIRoundButton = customRadius;
 }
 
 %end
+
 
 //Hooks the smaller circles inside the main modules
 
@@ -56,19 +58,23 @@ float customCCUIRoundButton = customRadius;
 
 %end
 
-//----------------------------------------------
+//Hooks the background of all the cc modules to fix the white background bug
 
+%hook _MTBackdropView
 
-%hook CCUIModuleCollectionViewController
+-(void)_setContinuousCornerRadius:(double)arg1 {
+    
+//NEED TO MAKE THESE EXCEPTIONS!!!
+//SBCoverSheetWindow
+//SBHomeScreenWindow
 
--(void)viewDidLoad {
-    %orig;
-    self.setContinuousCornerRadius = customRadius;
-
+    %orig(arg1 = customRadius);
+    
+    //arg1 = customRadius;
+    //%orig;
 }
 
 %end
-
 
 /*
 -(void) _setContinuousCornerRadius:(double)arg1 {
