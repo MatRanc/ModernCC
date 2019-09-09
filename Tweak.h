@@ -4,6 +4,8 @@
 @interface CCUIButtonModuleView : UIControl
 @end
 
+@interface _MTBackdropView : UIView
+@end
 
 @interface CCUIContentModuleContentContainerView : UIView {
 
@@ -36,7 +38,6 @@
 -(void)layoutSubviews;
 -(void)_setContinuousCornerRadius:(double)arg1 ;
 @end
-
 
 @interface CCUIRoundButton : UIControl {
 
