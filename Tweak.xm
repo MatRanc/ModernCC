@@ -9,7 +9,7 @@ inline float GetPrefFloat(NSString *key) {
 
 //Values
 //float customRadius = GetPrefFloat(@"largeCCModuleRadius");
-float customRadius = 0;
+float customRadius = 4;
 float customCCUIRoundButton = customRadius;
 
 
@@ -62,19 +62,23 @@ float customCCUIRoundButton = customRadius;
 
 %hook _MTBackdropView
 
--(void)_setContinuousCornerRadius:(double)arg1 {
-    
-//NEED TO MAKE THESE EXCEPTIONS!!!
+-(void)_setContinuousCornerRadius:(double)radiusInput {
+
+//exceptions
 //SBCoverSheetWindow
 //SBHomeScreenWindow
+    if ([self.window isKindOfClass:%c(SBControlCenterWindow)]) {
+        radiusInput = customRadius;
+        %orig;
+    }
 
-    %orig(arg1 = customRadius);
+    else {
+        %orig;
+    }
     
-    //arg1 = customRadius;
-    //%orig;
 }
-
 %end
+
 
 /*
 -(void) _setContinuousCornerRadius:(double)arg1 {
