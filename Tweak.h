@@ -7,6 +7,9 @@
 @interface _MTBackdropView : UIView
 @end
 
+@interface SBControlCenterWindow : UIWindow
+@end
+
 @interface CCUIContentModuleContentContainerView : UIView {
 
 	BOOL _expanded;
