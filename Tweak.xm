@@ -47,14 +47,15 @@ float customCCUIRoundButton = customRadius;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %hook CCUIButtonModuleView
--(void)viewDidAppear {
-    %orig;
-    self.subviews.cornerRadius = customRadius;
-}
+    -(void)didMoveToWindow {
+        %orig;
+        self.cornerRadius = customRadius;
+    }
+%end
+
 //one of the init, didMoveToSuperview/willMoveToSuperview:, or anything else that is called once.
 //https://discordapp.com/channels/349243932447604736/349251798621749261/627364710525960192
 
-%end
 
 //Hooks the background of all the cc modules to fix the white background bug
 
