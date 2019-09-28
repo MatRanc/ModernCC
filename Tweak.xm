@@ -48,8 +48,11 @@ float customCCUIRoundButton = customRadius;
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 %hook CCUIButtonModuleView
-
-
+- (void)willMoveToSuperview{
+    self.layer.cornerRadius = customRadius;
+}
+//one of the init, didMoveToSuperview/willMoveToSuperview:, or anything else that is called once.
+//https://discordapp.com/channels/349243932447604736/349251798621749261/627364710525960192
 
 %end
 
@@ -64,8 +67,6 @@ float customCCUIRoundButton = customRadius;
 }
 
 %end
-
-
 
 %hook CCUIButtonModuleCollectionView
 
