@@ -47,6 +47,12 @@ float customCCUIRoundButton = customRadius;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+%hook CCUIButtonModuleView
+
+
+
+%end
+
 //Hooks the background of all the cc modules to fix the white background bug
 
 /*
