@@ -13,7 +13,7 @@ float customRadius = 4;
 float customCCUIRoundButton = customRadius;
 
 
-//Hooks the main/default set of cc modules
+//Hooks the main (most) set of cc modules (all stock ones, not added through settings)
 %hook CCUIContentModuleContentContainerView
 -(void)_setContinuousCornerRadius:(double)arg1 {
     arg1 = customRadius;
@@ -21,7 +21,7 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-//Hooks the smaller circles inside the main modules
+//Hooks the smaller modules inside the main modules (wifi, airplane mode, bluetooth, etc.)
 %hook CCUIRoundButton
 -(void)_setCornerRadius:(double)arg1 {
     arg1 = customCCUIRoundButton;
@@ -29,7 +29,7 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-//Hooks the volume and birghtness sliders as they are too special to follow along with the others
+//Hooks for volume and birghtness sliders (have different hookings)
 %hook CCUIModuleSliderView
 -(void)setContinuousSliderCornerRadius:(double)arg1 {
     arg1 = customRadius;
@@ -45,6 +45,7 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
+//Beginning of confusion
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %hook CCUIButtonModuleView
     -(void)didMoveToWindow {
@@ -57,6 +58,9 @@ float customCCUIRoundButton = customRadius;
 //https://discordapp.com/channels/349243932447604736/349251798621749261/627364710525960192
 
 
+
+
+//START-old code that changed mtmaterialview system-wide
 //Hooks the background of all the cc modules to fix the white background bug
 
 /*
@@ -76,7 +80,9 @@ float customCCUIRoundButton = customRadius;
 }
 
 %end 
+//END
 
+//START - old code - testing iskindofclass scenarios
 //%orig([self.window isKindOfClass:%c(SBControlCenterWindow)] ? customRadius : arg1);
 //exceptions
 //SBCoverSheetWindow
@@ -90,3 +96,4 @@ float customCCUIRoundButton = customRadius;
     %orig;
 } 
 */
+//END
