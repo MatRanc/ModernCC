@@ -47,11 +47,11 @@ float customCCUIRoundButton = customRadius;
 
 //Beginning of confusion
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-%hook CCUIButtonModuleView
-    -(void)didMoveToWindow {
-        %orig;
-        self.cornerRadius = customRadius;
-    }
+%hook CCUIContentModuleContainerView
+-(void)_setCornerRadius:(double)arg1 {
+    arg1 = 5;
+    %orig;
+}
 %end
 
 //one of the init, didMoveToSuperview/willMoveToSuperview:, or anything else that is called once.
