@@ -6,7 +6,6 @@ mccprefs_FILES = FSDRootListController.m
 mccprefs_INSTALL_PATH = /Library/PreferenceBundles
 mccprefs_FRAMEWORKS = UIKit
 mccprefs_PRIVATE_FRAMEWORKS = Preferences
-mccprefs_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 

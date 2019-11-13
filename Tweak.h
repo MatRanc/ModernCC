@@ -11,13 +11,11 @@
 @end
 
 @interface CCUIContentModuleContentContainerView : UIView {
-
 	BOOL _expanded;
 	BOOL _moduleProvidesOwnPlatter;
 	BOOL _clipsContentInCompactMode;
 	MTMaterialView* _moduleMaterialView;
 	NSString* _materialViewGroupName;
-
 }
 
 @property (assign,nonatomic) BOOL moduleProvidesOwnPlatter;                      //@synthesize moduleProvidesOwnPlatter=_moduleProvidesOwnPlatter - In the implementation block
