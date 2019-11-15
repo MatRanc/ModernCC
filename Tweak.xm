@@ -11,10 +11,10 @@ inline float GetPrefFloat(NSString *key) {
 //float customRadius = GetPrefFloat(@"largeCCModuleRadius");
 float customRadius = 5;
 float customCCUIRoundButton = customRadius;
-//19 is defualtt
+//19 is defualt
 
 
-//Hooks the smaller modules inside the main modules (wifi, airplane mode, bluetooth, etc.)
+//Hooks the smaller modules inside the main modules (wifi, airplane mode, bluetooth, etc.) -13,12,11
 %hook CCUIRoundButton
 -(void)_setCornerRadius:(double)arg1 {
     arg1 = customCCUIRoundButton;
@@ -60,18 +60,39 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-
 /*
+%hook CCUIModuleCollectionViewController
 
-//doesnt work for radii - tested on 13
-%hook CCUIButtonModuleView
--(void)_setContinuousCornerRadius:(CGFloat)value {
-    value = customRadius;
-    %orig;
+    NSDictionary *modules = [moduleContainerViewByIdentifier allKeys];
+    for (allKeys modules) {
+        -(void)_setContinuousCornerRadius:(double)arg1 {
+            arg1 = customRadius;
+            %orig;
+    }
+    }
+
+%end
+*/
+
+//Fix for white background bug?
+//Doesnt work with current hooks
+%hook CCUIModularControlCenterOverlayViewController
+- (void)_setContinuousCornerRadius:(double)cornerRadius {
+    if ([self isKindOfClass:[%c(CCUIToggleViewController) class]]) {
+        %orig(customRadius);
+    } else {
+        %orig();
+    }
 }
 %end
 
-//Hooks the main (most) set of cc modules (all stock ones, not added through settings)
+//at this point i want to hard code in every cc button >:(
+
+
+
+/* OLD HOOKS
+
+//Hooks the main (most) set of cc modules (ONLY MAIN NOT ONES ADDED IN SETTINGS) -ios12+11 only
 %hook CCUIContentModuleContentContainerView
 -(void)_setContinuousCornerRadius:(double)arg1 {
     arg1 = customRadius;
@@ -79,15 +100,7 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-//Hooks the smaller modules inside the main modules (wifi, airplane mode, bluetooth, etc.)
-%hook CCUIRoundButton
--(void)_setCornerRadius:(double)arg1 {
-    arg1 = customCCUIRoundButton;
-    %orig;
-}
-%end
-
-//Hooks for volume and birghtness sliders (have different hookings)
+//Hooks for volume and birghtness sliders (have different hookings) -ios 11+12
 %hook CCUIModuleSliderView
 -(void)setContinuousSliderCornerRadius:(double)arg1 {
     arg1 = customRadius;
@@ -95,34 +108,12 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-//one of the init, didMoveToSuperview/willMoveToSuperview:, or anything else that is called once.
-//https://discordapp.com/channels/349243932447604736/349251798621749261/627364710525960192
-
-
-//Sets backdrop/white thing to math the rest, but changes radius system wide. Not optimal.
-/*
+//Sets backdrop/white thing to math the rest, but changes radius system wide. Not optimal. -ios12+11 only 
 %hook _MTBackdropView
-
 -(void)_setContinuousCornerRadius:(double)arg1 {
     arg1 = customRadius;
     %orig;
 }
-
 %end
 
-
-//START - old code - testing iskindofclass scenarios
-//%orig([self.window isKindOfClass:%c(SBControlCenterWindow)] ? customRadius : arg1);
-//exceptions
-//SBCoverSheetWindow
-//SBHomeScreenWindow
-
-
-/*
--(void) _setContinuousCornerRadius:(double)arg1 {
-    if ([self.window isKindOfClass:%c(SBControlCenterWindow)])
-        arg1 = customRadius;
-    %orig;
-} 
 */
-//END

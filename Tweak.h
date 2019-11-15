@@ -59,3 +59,17 @@
 -(double)_cornerRadius;
  
 @end
+
+@interface CCUIModuleCollectionViewController : UIViewController {
+	NSDictionary* _moduleViewControllerByIdentifier;
+	NSDictionary* _moduleContainerViewByIdentifier;
+	NSHashTable* _homeGestureDismissalAllowedModules;
+	NSHashTable* _currentModules;
+	NSHashTable* _expandedModules;
+}
+@end
+
+@interface CCUIScrollView : UIScrollView
+-(void)setFrame:(CGRect)arg1 ;
+-(BOOL)gestureRecognizerShouldBegin:(id)arg1 ;
+@end
