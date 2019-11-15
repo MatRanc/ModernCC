@@ -60,20 +60,6 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-/*
-%hook CCUIModuleCollectionViewController
-
-    NSDictionary *modules = [moduleContainerViewByIdentifier allKeys];
-    for (allKeys modules) {
-        -(void)_setContinuousCornerRadius:(double)arg1 {
-            arg1 = customRadius;
-            %orig;
-    }
-    }
-
-%end
-*/
-
 //Fix for white background bug?
 //Doesnt work with current hooks
 %hook CCUIModularControlCenterOverlayViewController
