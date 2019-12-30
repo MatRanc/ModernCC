@@ -1,4 +1,5 @@
 //TODO - FIX 13 VOLUME HUD, WHITE BACKGROUND BUG
+// (both bugs probably related due to mtmaterialview)
 
 //Imports
 #define PLIST_PATH @"/var/mobile/Library/Preferences/com.matdev.moderncc.plist"
@@ -11,6 +12,7 @@ inline float GetPrefFloat(NSString *key) {
 
 //Values
 //float customRadius = GetPrefFloat(@"largeCCModuleRadius");
+// ^for using values from settings
 float customRadius = 5;
 float customCCUIRoundButton = customRadius;
 //19 is defualt
@@ -24,21 +26,30 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-//iOS 13 hooks all small-er modules like on 12.
+//Hooks all modules
 %hook CCUIContentModuleContentContainerView
--(void)setCompactContinuousCornerRadius:(double)arg1 {
+-(void)_setContinuousCornerRadius:(double)arg1 {
     arg1 = customRadius;
     %orig;
-}
-
--(void)setExpandedContinuousCornerRadius:(double)arg1 {
-    arg1 = customRadius;
-    %orig;
-
 }
 %end
 
-//Hooks the brightness slider (possibly other general ones?) -ios13 only
+//Fix to the untweaked background on modules, needs a class though
+%hook MTMaterialView
+-(void)_setContinuousCornerRadius:(double)arg1 { 
+    if ([self isKindOfClass:%c(CCUIToggleViewController)]) 
+    //Below needs a rework...
+    [UIViewController setContinuousSliderCornerRadius:continuousCornerRadius];
+    _setContinuousSliderCornerRadius = customRadius;
+    }
+%end
+
+// remember heirarchies
+// layer.cornerRadius = 
+// "Essentially set the cornerRadius property of the layer"
+//Possible contenders: CCUIContentModuleContainerView, CCUIToggleViewController, CCUIContentModuleContainerViewController
+
+//Hooks the brightness slider -ios13 only
 %hook CCUIContinuousSliderView
 -(void)setContinuousSliderCornerRadius:(double)arg1 {
     arg1 = customRadius;
@@ -62,19 +73,7 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
-//Fix for white background bug?
-//Doesnt work with current hooks
-%hook CCUIModularControlCenterOverlayViewController
-- (void)_setContinuousCornerRadius:(double)cornerRadius {
-    if ([self isKindOfClass:[%c(CCUIToggleViewController) class]]) {
-        %orig(customRadius);
-    } else {
-        %orig();
-    }
-}
-%end
 
-//at this point i want to hard code in every cc button >:(
 
 
 

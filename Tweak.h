@@ -10,6 +10,12 @@
 @interface SBControlCenterWindow : UIWindow
 @end
 
+@interface CCUIButtonModuleViewController : UIViewController
+@end
+
+@interface CCUIToggleViewController : CCUIButtonModuleViewController
+@end
+
 @interface CCUIContentModuleContentContainerView : UIView {
 	BOOL _expanded;
 	BOOL _moduleProvidesOwnPlatter;
