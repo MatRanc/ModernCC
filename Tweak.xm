@@ -38,15 +38,21 @@ float customCCUIRoundButton = customRadius;
 %hook MTMaterialView
 -(void)_setContinuousCornerRadius:(double)arg1 { 
     if ([self isKindOfClass:%c(CCUIToggleViewController)]) 
-    //Below needs a rework...
-    [UIViewController setContinuousSliderCornerRadius:continuousCornerRadius];
-    _setContinuousSliderCornerRadius = customRadius;
+    [CCUIButtonModuleView* _setContinuousCornerRadius:customRadius];
     }
 %end
 
+// Thats the correct class but you call it on the instance (since its an instance method).
+// https://discordapp.com/channels/349243932447604736/349251798621749261/661381997280624649
+
+// [CCUIButtonModuleView setContinuousCornerRadius:customRadius];
+
 // remember heirarchies
-// layer.cornerRadius = 
-// "Essentially set the cornerRadius property of the layer"
+
+//@mat No, forget about layers for a second. 
+//Assume you are only given the interface of CustomView and you are allowed to either override its methods or you 
+//are allowed to call methods on it. How would you change the continuous corner radius?
+
 //Possible contenders: CCUIContentModuleContainerView, CCUIToggleViewController, CCUIContentModuleContainerViewController
 
 //Hooks the brightness slider -ios13 only
