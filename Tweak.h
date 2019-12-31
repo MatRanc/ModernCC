@@ -1,3 +1,5 @@
+//I can probably remove half of these.
+
 @interface MTMaterialView : UIView
 @end 
 
@@ -5,6 +7,12 @@
 @end
 
 @interface _MTBackdropView : UIView
+@end
+
+@interface CABackdropLayer : CALayer
+@end
+
+@interface MTMaterialLayer : CABackdropLayer
 @end
 
 @interface SBControlCenterWindow : UIWindow

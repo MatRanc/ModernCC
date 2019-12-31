@@ -13,7 +13,7 @@ inline float GetPrefFloat(NSString *key) {
 //Values
 //float customRadius = GetPrefFloat(@"largeCCModuleRadius");
 // ^for using values from settings
-float customRadius = 5;
+double customRadius = 5;
 float customCCUIRoundButton = customRadius;
 //19 is defualt
 
@@ -40,19 +40,30 @@ float customCCUIRoundButton = customRadius;
 //------------------------------------------------------------------------------------------------------------------------
 
 
-//Fix to the untweaked background on modules, needs a class though
+%hook UIView
+
+CALayer *MTMaterialInstance = [[CALayer alloc]init];
+
+-(void)_setCornerRadius:(double)arg1 {
+   if ([self isKindOfClass:%c(CCUIToggleViewController)])
+    [MTMaterialInstance setCornerRadius:customRadius];
+}
+
+%end
+
+
+/* -------BACKUP---------
 %hook MTMaterialView
 
-//Create the instance to be used below
-CCUIButtonModuleView *MTMaterialInstance = [[CCUIButtonModuleView alloc]init];
+CABackdropLayer *MTMaterialInstance = [[CABackdropLayer alloc]init];
 
 -(void)_setContinuousCornerRadius:(double)arg1 { 
     if ([self isKindOfClass:%c(CCUIToggleViewController)])
-    //Override the method 
-    [MTMaterialInstance _setContinuousCornerRadius:customRadius];
+    [MTMaterialInstance setCornerRadius:customRadius];
     }
+    
 %end
-
+---------------------------*/
 
 //Notes
 
