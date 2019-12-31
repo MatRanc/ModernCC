@@ -37,27 +37,27 @@ float customCCUIRoundButton = customRadius;
 
 
 
-
-
-
-
-
-
-
-
-
+//------------------------------------------------------------------------------------------------------------------------
 
 
 //Fix to the untweaked background on modules, needs a class though
 %hook MTMaterialView
 
+//Create the instance to be used below
 CCUIButtonModuleView *MTMaterialInstance = [[CCUIButtonModuleView alloc]init];
 
 -(void)_setContinuousCornerRadius:(double)arg1 { 
-    if ([self isKindOfClass:%c(CCUIToggleViewController)]) 
+    if ([self isKindOfClass:%c(CCUIToggleViewController)])
+    //Override the method 
     [MTMaterialInstance _setContinuousCornerRadius:customRadius];
     }
 %end
+
+
+//Notes
+
+// In flex, select the MTMaterialView of the module, then using the parent class, you can change the radius
+// So, I just need to make an instance of the parent class of the MTMaterialView being used to modify it?
 
 //Create the instance first
 //[instanceName methodName:Parameter]
@@ -80,15 +80,7 @@ CCUIButtonModuleView *MTMaterialInstance = [[CCUIButtonModuleView alloc]init];
 
 
 
-
-
-
-
-
-
-
-
-
+//------------------------------------------------------------------------------------------------------------------------
 
 
 
