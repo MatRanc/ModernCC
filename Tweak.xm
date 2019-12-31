@@ -34,6 +34,20 @@ float customCCUIRoundButton = customRadius;
 }
 %end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Fix to the untweaked background on modules, needs a class though
 %hook MTMaterialView
 -(void)_setContinuousCornerRadius:(double)arg1 { 
@@ -41,6 +55,8 @@ float customCCUIRoundButton = customRadius;
     [CCUIButtonModuleView* _setContinuousCornerRadius:customRadius];
     }
 %end
+
+//instanceName methodName:Parameter]
 
 // Thats the correct class but you call it on the instance (since its an instance method).
 // https://discordapp.com/channels/349243932447604736/349251798621749261/661381997280624649
@@ -54,6 +70,23 @@ float customCCUIRoundButton = customRadius;
 //are allowed to call methods on it. How would you change the continuous corner radius?
 
 //Possible contenders: CCUIContentModuleContainerView, CCUIToggleViewController, CCUIContentModuleContainerViewController
+
+//https://developer.limneos.net/index.php?ios=13.1.3&framework=ControlCenterUIKit.framework&header=CCUIButtonModuleView.h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Hooks the brightness slider -ios13 only
 %hook CCUIContinuousSliderView
