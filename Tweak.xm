@@ -50,13 +50,17 @@ float customCCUIRoundButton = customRadius;
 
 //Fix to the untweaked background on modules, needs a class though
 %hook MTMaterialView
+
+CCUIButtonModuleView *MTMaterialInstance = [[CCUIButtonModuleView alloc]init];
+
 -(void)_setContinuousCornerRadius:(double)arg1 { 
     if ([self isKindOfClass:%c(CCUIToggleViewController)]) 
-    [CCUIButtonModuleView* _setContinuousCornerRadius:customRadius];
+    [MTMaterialInstance _setContinuousCornerRadius:customRadius];
     }
 %end
 
-//instanceName methodName:Parameter]
+//Create the instance first
+//[instanceName methodName:Parameter]
 
 // Thats the correct class but you call it on the instance (since its an instance method).
 // https://discordapp.com/channels/349243932447604736/349251798621749261/661381997280624649
