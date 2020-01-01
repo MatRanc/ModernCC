@@ -40,19 +40,6 @@ float customCCUIRoundButton = customRadius;
 //------------------------------------------------------------------------------------------------------------------------
 
 
-%hook UIView
-
-CALayer *MTMaterialInstance = [[CALayer alloc]init];
-
--(void)_setCornerRadius:(double)arg1 {
-   if ([self isKindOfClass:%c(CCUIToggleViewController)])
-    [MTMaterialInstance setCornerRadius:customRadius];
-}
-
-%end
-
-
-/* -------BACKUP---------
 %hook MTMaterialView
 
 CABackdropLayer *MTMaterialInstance = [[CABackdropLayer alloc]init];
@@ -63,7 +50,6 @@ CABackdropLayer *MTMaterialInstance = [[CABackdropLayer alloc]init];
     }
     
 %end
----------------------------*/
 
 //Notes
 
