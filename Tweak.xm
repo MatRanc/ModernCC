@@ -66,7 +66,7 @@ CABackdropLayer *MTMaterialInstance = [[CABackdropLayer alloc]init];
 
 // remember heirarchies
 
-//@mat No, forget about layers for a second. 
+//forget about layers
 //Assume you are only given the interface of CustomView and you are allowed to either override its methods or you 
 //are allowed to call methods on it. How would you change the continuous corner radius?
 
