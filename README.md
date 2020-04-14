@@ -1,9 +1,9 @@
 # ModernCC
-A tweak to change the radii of control center modules. 
+A tweak to change the radii of control center modules. Supports iOS 13.
 
 **Steps to release:**  
 Fix major bug affecting hooking system wide  
-Fix preference page to make it work again
+Fix preference page to make it work again  
 
 
 ![img_1964png](https://user-images.githubusercontent.com/40959576/66708674-295ad380-ed22-11e9-82dc-a5fe0930d873.jpg)
