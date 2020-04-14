@@ -2,7 +2,7 @@
 A tweak to change the radii of control center modules. 
 
 **Steps to release:**  
-Fix major bug affecting hooking system wide
+Fix major bug affecting hooking system wide  
 Fix preference page to make it work again
 
 
